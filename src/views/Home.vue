@@ -1,6 +1,8 @@
 <template>
   <img alt='banner' src='../assets/banner.jpeg'>
-  <grid4 :products='products'/>
+  <div class='container'>
+    <grid4 :data='products'/>
+  </div>
 </template>
 
 <script>
@@ -26,5 +28,10 @@ img {
   height: 300px;
   object-fit: cover;
   object-position: 0% 0%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
