@@ -1,9 +1,13 @@
 <template>
   <div class='card'>
     <img :src='info.image' :alt='info.title' />
-    <h3>{{ info.title }}</h3>
-    <span>{{ info.price }}</span>
-    <span class='rate'>{{ info.rating.rate }} &#9733;</span>
+    <div class='text-container'>
+      <h3>{{ info.title }}</h3>
+      <p class='description'>{{ info.description }}</p>
+      <span class='price'>$ {{ info.price }}</span>
+      <span class='rate'>&#9733; {{ info.rating.rate }}</span>
+      <i class="fas fa-cart-plus"></i>
+    </div>
   </div>
 </template>
 
@@ -18,7 +22,7 @@ export default {
 @import '../assets/variables';
 
 .card {
-  background-color: $colorRed;
+  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   img {
@@ -26,12 +30,25 @@ export default {
     height: 250px;
     object-fit: fill;
   }
-  p {
-    color: $GreenColor;
-    font-weight: 700;
-  }
-  .rate {
-    color: $RedColor;
+  .text-container {
+    text-align: left;
+    padding: 20px;
+    h3 {
+      padding: 10px 0;
+    }
+    .description {
+      font-size: 0.7rem;
+      font-weight: 100;
+      padding-bottom: 10px;
+    }
+    .price {
+      color: $GreenColor;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    .rate {
+      color: $RedColor;
+    }
   }
 }
 </style>

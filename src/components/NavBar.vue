@@ -18,8 +18,12 @@ export default {
 @import '../assets/variables';
 
 nav {
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
   display: flex;
   background-color: $colorRed;
+  background-color: #fff;
   padding: 5px 20px;
   justify-content: space-between;
   align-items: center;
