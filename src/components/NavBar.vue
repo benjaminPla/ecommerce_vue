@@ -15,9 +15,11 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@import '../assets/variables';
+
 nav {
   display: flex;
-  background: red;
+  background-color: $colorRed;
   padding: 5px 20px;
   justify-content: space-between;
   align-items: center;
