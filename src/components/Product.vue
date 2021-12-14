@@ -2,7 +2,8 @@
   <div class='card'>
     <img :src='info.image' :alt='info.title' />
     <h3>{{ info.title }}</h3>
-    <p>{{ info.price }}</p>
+    <span>{{ info.price }}</span>
+    <span class='rate'>{{ info.rating.rate }} &#9733;</span>
   </div>
 </template>
 
@@ -28,6 +29,9 @@ export default {
   p {
     color: $GreenColor;
     font-weight: 700;
+  }
+  .rate {
+    color: $RedColor;
   }
 }
 </style>
