@@ -4,13 +4,22 @@
     <div>
       <router-link class='link' to="/">Home</router-link>
       <router-link class='link' to="/about">About</router-link>
+      <span class='link'>Products: {{ cart.length }}</span>
     </div>
   </nav>
 </template>
 
 <script>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
 export default {
   name: 'NavBar',
+  setup() {
+    const store = useStore();
+    const cart = computed(() => store.state.cart);
+    return { cart };
+  },
 };
 </script>
 

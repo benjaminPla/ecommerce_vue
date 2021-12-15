@@ -10,6 +10,7 @@
     <button @click.prevent='quantity > 0 && quantity --'>-</button>
     <span>{{ quantity }}</span>
     <button @click.prevent='quantity ++'>+</button>
+    <span>Total: ${{ info.price * quantity }}</span>
     <i @click.prevent='add' class="fas fa-cart-plus" :productId='info.id'></i>
   </div>
 </template>
