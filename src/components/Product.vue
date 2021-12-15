@@ -1,20 +1,27 @@
 <template>
   <div class='card'>
+    <i @click.prevent='add' class="fas fa-cart-plus" :productId='info.id'></i>
     <img :src='info.image' :alt='info.title' />
     <div class='text-container'>
       <h3>{{ info.title }}</h3>
       <p class='description'>{{ info.description }}</p>
       <span class='price'>$ {{ info.price }}</span>
       <span class='rate'>&#9733; {{ info.rating.rate }}</span>
-      <i class="fas fa-cart-plus"></i>
     </div>
   </div>
 </template>
 
 <script>
+import { useStore } from 'vuex';
+
 export default {
   name: 'Product',
   props: ['info'],
+  setup() {
+    const store = useStore();
+    const add = (product) => store.commit('addCart', product.target.getAttribute('productId'));
+    return { add };
+  },
 };
 </script>
 

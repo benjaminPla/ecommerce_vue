@@ -3,10 +3,12 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     products: [],
+    cart: [],
   },
   /* eslint-disable */
   mutations: {
     setProducts: (state, payload) => state.products = payload,
+    addCart: (state, payload) => state.cart.push(payload),
   },
   /* eslint-enable */
   actions: {
