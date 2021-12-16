@@ -15,6 +15,7 @@ export default createStore({
     async getProducts({ commit }) {
       const products = await fetch('https://fakestoreapi.com/products?limit=12')
         .then((res) => res.json())
+        // eslint-disable-next-line
         .catch((error) => console.log(error));
       commit('setProducts', products);
     },

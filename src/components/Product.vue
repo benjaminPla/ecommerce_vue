@@ -7,27 +7,17 @@
       <span class='price'>$ {{ info.price }}</span>
       <span class='rate'>&#9733; {{ info.rating.rate }}</span>
     </div>
-    <button @click.prevent='quantity > 0 && quantity --'>-</button>
-    <span>{{ quantity }}</span>
-    <button @click.prevent='quantity ++'>+</button>
-    <span>Total: ${{ info.price * quantity }}</span>
-    <i @click.prevent='add' class="fas fa-cart-plus" :productId='info.id'></i>
+    <quantity :data='info'/>
   </div>
 </template>
 
 <script>
-import { useStore } from 'vuex';
-import { ref } from 'vue';
+import Quantity from './Quantity.vue';
 
 export default {
   name: 'Product',
   props: ['info'],
-  setup() {
-    const store = useStore();
-    const quantity = ref(0);
-    const add = (product) => store.commit('addCart', product.target.getAttribute('productId'));
-    return { quantity, add };
-  },
+  components: { Quantity },
 };
 </script>
 
